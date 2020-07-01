@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import SelectLevel from "@/components/SelectLevel.vue";
-import MineSweeping from "@/components/MineSweeping.vue";
+import SelectLevel from "./components/SelectLevel.vue";
+import MineSweeping from "./components/MineSweeping.vue";
 export default {
 	name: "app",
 	components: { 

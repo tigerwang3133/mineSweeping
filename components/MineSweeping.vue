@@ -95,24 +95,30 @@ export default {
         over(newVal) {
             switch(newVal) {
                 case 1:
-                    alert("BOOM，爱心轰炸");
+					uni.showToast({
+					        title: 'BOOM，炸了',
+					 });
                     break;
                 case 2:
                     const wrongMark = this.judgeWrongMark();
                     if (wrongMark) {
-                        setTimeout(() => {
-                            alert(`你有${wrongMark}个爱心标记错啦`);
-                        }, 500);
+						uni.showToast({
+						        title: wrongMark+'标记错啦',
+						        duration: 1000
+						 });
                     } else {
                         this.openAllRest();
-                        alert("优秀，找出了全部的❤");
+						uni.showToast({
+						        title: '优秀，通关❤',
+						        duration: 4000
+						 });
                     }
                     break;
                 default:
                     break;
             }
             if (newVal) {
-                window.clearInterval(this.interval);
+                clearInterval(this.interval);
             }
         },
     },
